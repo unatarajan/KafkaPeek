@@ -8,6 +8,9 @@ services:
       GF_PATHS_DATA: /var/lib/grafana
       GF_SECURITY_ADMIN_PASSWORD: kafka
       GF_SECURITY_ALLOW_EMBEDDING: true
+      CORS_ALLOW_ORIGIN: '*'
+      GF_AUTH_ANONYMOUS_ENABLED: true
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
     volumes:
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
